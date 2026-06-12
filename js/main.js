@@ -39,39 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ===================== HERO 슬라이더 ===================== */
-  const heroSlides = document.querySelectorAll('.hero-slide');
-  const heroDotsWrap = document.getElementById('heroDots');
-  let heroIndex = 0;
-  let heroTimer;
-
-  heroSlides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    if (i === 0) dot.classList.add('is-active');
-    dot.setAttribute('aria-label', `${i + 1}번째 슬라이드`);
-    dot.addEventListener('click', () => goToHero(i));
-    heroDotsWrap.appendChild(dot);
-  });
-  const heroDots = heroDotsWrap.querySelectorAll('button');
-
-  function goToHero(i){
-    heroSlides[heroIndex].classList.remove('is-active');
-    heroDots[heroIndex].classList.remove('is-active');
-    heroIndex = i;
-    heroSlides[heroIndex].classList.add('is-active');
-    heroDots[heroIndex].classList.add('is-active');
-  }
-
-  function nextHero(){
-    goToHero((heroIndex + 1) % heroSlides.length);
-  }
-
-  function startHeroAuto(){
-    heroTimer = setInterval(nextHero, 5000);
-  }
-  startHeroAuto();
-
-  /* ===================== 롤링 배너 (신규) ===================== */
+  /* ===================== HERO 롤링 배너 ===================== */
   const rollSlides = document.querySelectorAll('.roll-slide');
   const rollDotsWrap = document.getElementById('rollDots');
   const rollPrevBtn = document.getElementById('rollPrev');

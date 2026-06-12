@@ -416,7 +416,87 @@ ul{ list-style:none; }
 .quick-icon svg, .quick-icon img{ width:100%; height:100%; object-fit:contain; }
 
 /* =========================================================
-   NEW: 롤링 배너 (신규 추가 영역)
+   HERO 롤링 배너 (메인 상단, 전체 너비)
+   ========================================================= */
+.hero-banner{
+  position:relative;
+  width:100%;
+  background:#0b1830;
+  overflow:hidden;
+}
+.hero-banner .rolling-banner-inner{ position:relative; }
+.hero-banner .rolling-track{
+  position:relative;
+  width:100%;
+  height:auto;
+  aspect-ratio:1920 / 1059;
+  max-height:84vh;
+  border-radius:0;
+  box-shadow:none;
+  overflow:hidden;
+}
+.hero-banner .roll-slide{
+  position:absolute;
+  inset:0;
+  display:block;
+  padding:0;
+  opacity:0;
+  transform:none;
+  transition:opacity .8s ease;
+  pointer-events:none;
+}
+.hero-banner .roll-slide.is-active{ opacity:1; transform:none; pointer-events:auto; }
+.hero-banner .roll-slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.hero-banner .roll-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:5;
+  width:46px;
+  height:46px;
+  font-size:1.5rem;
+  background:rgba(255,255,255,.78);
+  color:#1a2b46;
+  border:none;
+  box-shadow:0 4px 14px rgba(0,0,0,.18);
+}
+.hero-banner .roll-prev{ left:24px; }
+.hero-banner .roll-next{ right:24px; }
+.hero-banner .roll-arrow:hover{ background:#fff; color:#1a2b46; border-color:transparent; }
+.hero-banner .rolling-controls{
+  position:absolute;
+  left:50%;
+  bottom:22px;
+  transform:translateX(-50%);
+  z-index:5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin:0;
+  padding:7px 16px;
+  background:rgba(10,20,40,.42);
+  border-radius:999px;
+  backdrop-filter:blur(4px);
+}
+.hero-banner .rolling-dots button{ background:rgba(255,255,255,.55); }
+.hero-banner .rolling-dots button.is-active{ background:#fff; transform:scale(1.25); }
+.hero-banner .roll-play{
+  width:28px;
+  height:28px;
+  background:rgba(255,255,255,.85);
+  color:#1a2b46;
+  font-size:.7rem;
+}
+.hero-banner .roll-play:hover{ background:#fff; }
+
+/* =========================================================
+   롤링 배너 (공통 슬라이드/컨트롤 베이스)
    ========================================================= */
 .rolling-banner{
   max-width:var(--max-w);
@@ -879,9 +959,10 @@ ul{ list-style:none; }
   .logo-text{ font-size:1.05rem; }
   .logo-text small{ display:none; }
 
-  .hero{ height:60vh; min-height:320px; }
-  .hero-content h1{ font-size:1.3rem; margin-bottom:12px; }
-  .media-list{ display:none; }
+  .hero-banner .roll-arrow{ width:34px; height:34px; font-size:1.1rem; }
+  .hero-banner .roll-prev{ left:10px; }
+  .hero-banner .roll-next{ right:10px; }
+  .hero-banner .rolling-controls{ bottom:10px; gap:10px; padding:5px 12px; }
 
   .intro-banner{ padding:44px 16px; }
 

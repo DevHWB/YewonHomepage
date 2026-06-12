@@ -157,40 +157,30 @@
 </header>
 <div class="mobile-menu-backdrop" id="menuBackdrop"></div>
 
-<!-- ========== HERO SLIDER ========== -->
-<section class="hero" aria-label="대표 슬라이드">
-  <div class="hero-slides" id="heroSlides">
-    <div class="hero-slide hero-bg-1 is-active">
-      <div class="hero-content">
-        <h1>정은주 담임목사 설교방송</h1>
-        <ul class="media-list">
-          <li><span class="media-badge media-cts">CTS</span> CTS기독교TV 생명의 말씀 <small>매주 수요일 오후 6시 / 매주 토 새벽 4시</small></li>
-          <li><span class="media-badge media-cbs">CBS</span> CBS TV임마누엘 <small>매주 토요일 오전 5시 30분 (재방송)</small></li>
-          <li><span class="media-badge media-good">GOOD TV</span> GOOD TV 비전성공 <small>매주 토요일 오후 6시</small></li>
-          <li>미주지역 라디오 방송 <small>LA지역 가정교양(AM 1650) / 매주 일요일 오전 8시 30분, 매주 토 새벽 12시</small></li>
-        </ul>
-      </div>
+<!-- ========== HERO 롤링 배너 (메인 상단, 전체 너비) ========== -->
+<section class="hero-banner" aria-label="교회 소식 롤링 배너">
+  <div class="rolling-banner-inner">
+    <div class="rolling-track" id="rollingTrack">
+      <article class="roll-slide is-active">
+        <img src="assets/banners/banner-new-1.webp" alt="정은주 담임목사 설교방송 안내">
+      </article>
+      <article class="roll-slide">
+        <img src="assets/banners/banner-new-2.webp" alt="CALEB CHOIR - 예원교회 제3 워십 콰이어">
+      </article>
+      <article class="roll-slide">
+        <img src="assets/banners/banner-new-3.webp" alt="선교 횃불 기도회 안내">
+      </article>
+      <article class="roll-slide">
+        <img src="assets/banners/banner-new-4.webp" alt="전도축제 초대 안내">
+      </article>
     </div>
-    <div class="hero-slide hero-bg-2">
-      <div class="hero-content">
-        <h1>2024 가을 특별새벽기도회</h1>
-        <p class="hero-sub">새벽을 깨우는 기도, 다시 회복의 자리로 나아갑니다.</p>
-      </div>
-    </div>
-    <div class="hero-slide hero-bg-3">
-      <div class="hero-content">
-        <h1>다음세대와 함께 세우는 교회</h1>
-        <p class="hero-sub">예원의 미래, 우리 아이들을 함께 키워갑니다.</p>
-      </div>
-    </div>
-    <div class="hero-slide hero-bg-4">
-      <div class="hero-content">
-        <h1>온 가족이 함께 드리는 예배</h1>
-        <p class="hero-sub">주일 1부 9시 / 2부 11시 / 3부 오후 1시</p>
-      </div>
+    <button class="roll-arrow roll-prev" id="rollPrev" aria-label="이전 배너">‹</button>
+    <button class="roll-arrow roll-next" id="rollNext" aria-label="다음 배너">›</button>
+    <div class="rolling-controls">
+      <div class="rolling-dots" id="rollDots"></div>
+      <button class="roll-play" id="rollPlay" aria-label="자동재생 일시정지">❙❙</button>
     </div>
   </div>
-  <div class="hero-dots" id="heroDots"></div>
 </section>
 
 <!-- ========== 인트로 그린 배너 ========== -->
@@ -241,69 +231,6 @@
     오시는길
   </a>
 </nav>
-
-<!-- ========== NEW: 롤링 배너 (신규 추가) ========== -->
-<section class="rolling-banner" aria-label="교회 소식 롤링 배너">
-  <div class="rolling-banner-inner">
-    <div class="rolling-track" id="rollingTrack">
-      <article class="roll-slide roll-1 is-active">
-        <div class="roll-tag">SPECIAL</div>
-        <h3>2024 가을 특별새벽기도회</h3>
-        <p>10월 21일(월) ~ 25일(금) · 매일 새벽 5시</p>
-        <a href="#" class="roll-btn">자세히 보기</a>
-      </article>
-      <article class="roll-slide roll-2">
-        <div class="roll-tag">행사</div>
-        <h3>추수감사절 감사예배 안내</h3>
-        <p>11월 17일(주일) · 본당 통합예배로 진행</p>
-        <a href="#" class="roll-btn">자세히 보기</a>
-      </article>
-      <article class="roll-slide roll-3">
-        <div class="roll-tag">다음세대</div>
-        <h3>2024 가을 수련회 참가 신청</h3>
-        <p>유년부 ~ 청년부 대상 · 신청 마감 D-7</p>
-        <a href="#" class="roll-btn">신청하기</a>
-      </article>
-      <article class="roll-slide roll-4">
-        <div class="roll-tag">안내</div>
-        <h3>온라인 헌금 시스템 오픈</h3>
-        <p>홈페이지에서 간편하게 헌금할 수 있습니다</p>
-        <a href="#" class="roll-btn">이용 안내</a>
-      </article>
-      <article class="roll-slide roll-5">
-        <div class="roll-tag">말씀</div>
-        <h3>성경통독 프로그램 모집</h3>
-        <p>매주 화요일 저녁 7시 · 온라인 병행</p>
-        <a href="#" class="roll-btn">신청하기</a>
-      </article>
-      <article class="roll-slide roll-6">
-        <div class="roll-tag">선교</div>
-        <h3>선교지 후원 캠페인</h3>
-        <p>세계 곳곳의 선교사님들을 함께 후원해주세요</p>
-        <a href="#" class="roll-btn">후원하기</a>
-      </article>
-      <article class="roll-slide roll-image-slide roll-7">
-        <img src="assets/banners/banner-new-1.webp" alt="정은주 담임목사 설교방송 안내">
-      </article>
-      <article class="roll-slide roll-image-slide roll-8">
-        <img src="assets/banners/banner-new-2.webp" alt="CALEB CHOIR - Yewon Church 3rd Worship Choir">
-      </article>
-      <article class="roll-slide roll-image-slide roll-9">
-        <img src="assets/banners/banner-new-3.webp" alt="선교 횃불 기도회 안내">
-      </article>
-      <article class="roll-slide roll-image-slide roll-10">
-        <img src="assets/banners/banner-new-4.webp" alt="전도축제 초대 안내">
-      </article>
-    </div>
-
-    <div class="rolling-controls">
-      <button class="roll-arrow roll-prev" id="rollPrev" aria-label="이전 배너">‹</button>
-      <div class="rolling-dots" id="rollDots"></div>
-      <button class="roll-arrow roll-next" id="rollNext" aria-label="다음 배너">›</button>
-      <button class="roll-play" id="rollPlay" aria-label="자동재생 일시정지">❙❙</button>
-    </div>
-  </div>
-</section>
 
 <!-- ========== 말씀이 살아있는 교회 ========== -->
 <section class="word-section">
