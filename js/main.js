@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let rollIndex = 0;
   let rollTimer;
   let rollPlaying = true;
-  const ROLL_INTERVAL = 4000;
+  const ROLL_INTERVAL = 5000;
 
   rollSlides.forEach((_, i) => {
     const dot = document.createElement('button');
