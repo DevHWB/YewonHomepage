@@ -599,47 +599,15 @@ ul{ list-style:none; }
 }
 .overview-card{
   position:relative;
-  aspect-ratio:4/3;
+  aspect-ratio:1167/565;
   border-radius:18px;
   overflow:hidden;
-  display:flex;
-  align-items:flex-end;
-  color:#fff;
 }
 .overview-card img{
-  position:absolute;
-  inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
-}
-.overview-card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,.55) 100%);
-}
-.card-word{ background:linear-gradient(135deg,#f6c9b8,#f3dfe6 55%,#fbeae6); }
-.card-mission{ background:linear-gradient(160deg,#1c2b46,#2c3f63 55%,#1e5066); }
-.card-community{ background:linear-gradient(150deg,var(--green-1),var(--green-3)); }
-.overview-text{
-  position:relative;
-  z-index:2;
-  width:100%;
-  padding:26px 28px;
-}
-.overview-text p{
-  font-size:.95rem;
-  font-weight:600;
-  line-height:1.5;
-  margin-bottom:8px;
-  opacity:.95;
-}
-.overview-label{
   display:block;
-  font-size:clamp(1.6rem,3vw,2.2rem);
-  font-weight:800;
-  letter-spacing:.04em;
 }
 
 /* =========================================================
