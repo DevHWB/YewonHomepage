@@ -12,8 +12,6 @@
   --navy-2:#2c3f63;
   --text-dark:#222b33;
   --text-mute:#6b7178;
-  --pink-1:#fbeae6;
-  --pink-2:#f3dfe6;
   --header-h:64px;
   --max-w:1180px;
   font-size:16px;
@@ -77,6 +75,7 @@ ul{ list-style:none; }
 }
 .logo-mark{ display:flex; align-items:center; }
 .logo-mark img{ width:38px; height:38px; object-fit:contain; }
+.logo-mark svg{ width:38px; height:38px; }
 .logo-text{
   font-size:1.25rem;
   font-weight:800;
@@ -484,8 +483,14 @@ ul{ list-style:none; }
   border-radius:999px;
   backdrop-filter:blur(4px);
 }
-.hero-banner .rolling-dots button{ background:rgba(255,255,255,.55); }
-.hero-banner .rolling-dots button.is-active{ background:#fff; transform:scale(1.25); }
+.hero-banner .rolling-dots button{
+  width:12px;
+  height:12px;
+  border-radius:3px;
+  background:rgba(255,255,255,.55);
+  transform:none;
+}
+.hero-banner .rolling-dots button.is-active{ background:var(--green-1); transform:none; }
 .hero-banner .roll-play{
   width:28px;
   height:28px;
@@ -498,11 +503,6 @@ ul{ list-style:none; }
 /* =========================================================
    롤링 배너 (공통 슬라이드/컨트롤 베이스)
    ========================================================= */
-.rolling-banner{
-  max-width:var(--max-w);
-  margin:0 auto;
-  padding:0 20px 36px;
-}
 .rolling-banner-inner{ position:relative; }
 .rolling-track{
   position:relative;
@@ -531,49 +531,6 @@ ul{ list-style:none; }
   transform:scale(1);
   pointer-events:auto;
 }
-.roll-1{ background:linear-gradient(120deg,#1f6d3a,#48b06a); }
-.roll-2{ background:linear-gradient(120deg,#b15a2e,#e89a4d); }
-.roll-3{ background:linear-gradient(120deg,#2c4f8c,#5a8ce0); }
-.roll-4{ background:linear-gradient(120deg,#7a3f9d,#b06fdc); }
-.roll-5{ background:linear-gradient(120deg,#1f7a7a,#4cc2c2); }
-.roll-6{ background:linear-gradient(120deg,#8c2c4f,#e0608a); }
-
-.roll-image-slide{
-  padding:0;
-  background:#0b1830;
-}
-.roll-image-slide img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.roll-tag{
-  display:inline-block;
-  background:rgba(255,255,255,.22);
-  border:1px solid rgba(255,255,255,.5);
-  border-radius:999px;
-  padding:4px 14px;
-  font-size:.75rem;
-  font-weight:700;
-  letter-spacing:.06em;
-}
-.roll-slide h3{
-  font-size:clamp(1.2rem,3vw,1.7rem);
-  font-weight:800;
-}
-.roll-slide p{ font-size:.95rem; opacity:.92; }
-.roll-btn{
-  margin-top:8px;
-  background:#fff;
-  color:var(--text-dark);
-  font-weight:700;
-  font-size:.85rem;
-  padding:9px 20px;
-  border-radius:999px;
-  transition:transform .2s;
-}
-.roll-btn:hover{ transform:translateY(-2px); }
 
 .rolling-controls{
   display:flex;
@@ -620,329 +577,131 @@ ul{ list-style:none; }
 .roll-play:hover{ background:var(--green-light); }
 
 /* =========================================================
-   말씀이 살아있는 교회
+   사역 소개 (말씀 / 세계선교 / 다음세대 / 공동체)
    ========================================================= */
-.word-section{
-  background:
-    linear-gradient(135deg, var(--pink-1) 0%, var(--pink-2) 55%, #fbeee6 100%);
-  padding:64px 20px;
+.overview-section{
+  position:relative;
+  background:#fff;
+  padding:0 20px 70px;
 }
-.word-inner{
+.overview-wave{
+  height:64px;
+  background:var(--green-2);
+  clip-path:polygon(0 0, 100% 0, 100% 40%, 92% 75%, 80% 40%, 68% 70%, 55% 30%, 42% 75%, 30% 35%, 18% 70%, 8% 40%, 0 60%);
+}
+.overview-grid{
   max-width:var(--max-w);
   margin:0 auto;
+  padding-top:36px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
+  gap:22px;
 }
-.word-photo{
+.overview-card{
+  position:relative;
   aspect-ratio:4/3;
   border-radius:18px;
-  background:linear-gradient(145deg,#cfd6dd,#9aa6b2);
-  background-image:
-    radial-gradient(circle at 30% 30%, rgba(255,255,255,.5), transparent 60%),
-    linear-gradient(145deg,#cfd6dd,#9aa6b2);
-}
-.word-eyebrow{ font-size:1.4rem; font-weight:700; color:var(--text-mute); }
-.word-content h2{ font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; margin-bottom:14px; }
-.word-desc{ color:var(--text-mute); margin-bottom:22px; }
-.word-actions{ display:flex; gap:12px; }
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 26px;
-  border-radius:999px;
-  font-size:.9rem;
-  font-weight:700;
-  transition:transform .2s, background .2s, color .2s;
-  border:1px solid transparent;
-  cursor:pointer;
-}
-.btn-outline{
-  background:#fff;
-  color:var(--text-dark);
-  border-color:#dde3df;
-}
-.btn-outline:hover{ background:var(--green-2); color:#fff; border-color:var(--green-2); }
-.btn-dark{
-  background:var(--navy);
-  color:#fff;
-}
-.btn-dark:hover{ background:var(--green-1); transform:translateY(-2px); }
-.btn-outline-light{
-  background:transparent;
-  color:#fff;
-  border-color:rgba(255,255,255,.55);
-}
-.btn-outline-light:hover{ background:rgba(255,255,255,.15); }
-.btn-fill-light{
-  background:#fff;
-  color:var(--navy);
-}
-.btn-fill-light:hover{ transform:translateY(-2px); }
-
-/* =========================================================
-   치유가 있는 교회
-   ========================================================= */
-.healing-section{
-  background:#fff;
-  padding:70px 20px 50px;
-  position:relative;
   overflow:hidden;
-}
-.healing-inner{
-  max-width:var(--max-w);
-  margin:0 auto;
-  position:relative;
-  min-height:300px;
-}
-.healing-head h2{
-  font-size:clamp(1.8rem,4vw,2.6rem);
-  font-weight:800;
-  margin-bottom:20px;
-}
-.healing-head p{ font-size:1rem; font-weight:600; margin-bottom:16px; }
-.healing-sub{
-  font-size:.9rem;
-  font-weight:400 !important;
-  color:var(--text-mute);
-  max-width:380px;
-  margin-bottom:24px !important;
-}
-.healing-head{ max-width:480px; position:relative; z-index:2; }
-.healing-bird{
-  position:absolute;
-  right:-40px; top:-10px;
-  width:min(360px,55%);
-  opacity:.9;
-  z-index:1;
-}
-
-.testimonial-row{
-  max-width:var(--max-w);
-  margin:50px auto 0;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-.testimonial-card{
-  background:#f7f8f7;
-  border-radius:14px;
-  padding:24px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-.quote-mark{
-  font-size:1.8rem;
-  font-weight:800;
-  color:var(--green-2);
-  line-height:1;
-}
-.testimonial-card h4{ font-size:1rem; font-weight:800; line-height:1.4; }
-.testimonial-card p{
-  font-size:.82rem;
-  color:var(--text-mute);
-  flex:1;
-}
-.testimonial-meta{
-  font-size:.78rem;
-  font-weight:700;
-  color:var(--green-1);
-}
-
-/* =========================================================
-   아이들이 살아나는 교회 / 후대를 향한
-   ========================================================= */
-.kids-section{
-  background:#fff;
-  padding:30px 20px 70px;
-}
-.kids-row{
-  max-width:var(--max-w);
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
-  padding:36px 0;
-  position:relative;
-}
-.kids-row.reverse{ direction:rtl; }
-.kids-row.reverse > *{ direction:ltr; }
-.kids-photo{
-  aspect-ratio:4/3;
-  border-radius:18px;
-  background:linear-gradient(145deg,#dfe6e9,#b2bec3);
-  position:relative;
   display:flex;
   align-items:flex-end;
-  justify-content:flex-end;
-  overflow:visible;
+  color:#fff;
 }
-.kids-photo img{
+.overview-card img{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
-  border-radius:18px;
 }
-.leaf{
-  position:absolute;
-  font-size:3rem;
-  filter:drop-shadow(0 8px 12px rgba(0,0,0,.12));
-}
-.leaf-1{ bottom:-26px; right:-26px; }
-.leaf-2{ top:-26px; left:-26px; transform:rotate(180deg); }
-.kids-content h2{
-  font-size:clamp(1.6rem,3.6vw,2.3rem);
-  font-weight:800;
-  margin-bottom:14px;
-  line-height:1.35;
-}
-.kids-content p{ color:var(--text-mute); margin-bottom:20px; font-size:.92rem; }
-
-/* =========================================================
-   세계 선교를 위해 불을 밝히는 교회
-   ========================================================= */
-.mission-section{
-  position:relative;
-  background:linear-gradient(160deg,#1c2b46 0%, #1b3a52 55%, #1e5066 100%);
-  color:#fff;
-  text-align:center;
-  padding:80px 20px 120px;
-  overflow:hidden;
-}
-.mission-section::after{
+.overview-card::after{
   content:"";
   position:absolute;
-  left:0; right:0; bottom:-1px;
-  height:90px;
-  background:var(--green-2);
-  clip-path:polygon(0 60%, 8% 40%, 18% 70%, 30% 35%, 42% 75%, 55% 30%, 68% 70%, 80% 40%, 92% 75%, 100% 45%, 100% 100%, 0 100%);
+  inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,.55) 100%);
 }
-.mission-bartizan{
-  position:absolute;
-  right:4%;
-  top:6%;
-  width:min(160px,18%);
-  opacity:.85;
-  z-index:1;
-  pointer-events:none;
-}
-.mission-wave{
-  position:absolute;
-  left:0; right:0; bottom:60px;
-  width:100%;
-  z-index:1;
-  opacity:.5;
-  pointer-events:none;
-}
-.mission-inner{ max-width:var(--max-w); margin:0 auto; position:relative; z-index:2; }
-.mission-section h2{
-  font-size:clamp(1.7rem,4vw,2.5rem);
-  font-weight:800;
-  margin-bottom:22px;
-  line-height:1.35;
-}
-.mission-section p{ opacity:.85; margin-bottom:26px; }
-.mission-actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-.mission-sub-text{
+.card-word{ background:linear-gradient(135deg,#f6c9b8,#f3dfe6 55%,#fbeae6); }
+.card-mission{ background:linear-gradient(160deg,#1c2b46,#2c3f63 55%,#1e5066); }
+.card-community{ background:linear-gradient(150deg,var(--green-1),var(--green-3)); }
+.overview-text{
   position:relative;
   z-index:2;
-  text-align:center;
-  font-size:.8rem;
-  opacity:.7;
-  margin-top:18px;
-}
-
-/* =========================================================
-   공동체가 건강한/살아있는 교회
-   ========================================================= */
-.community-section{
-  background:linear-gradient(180deg,var(--green-2),var(--green-3));
-  padding:90px 20px;
-  color:#fff;
-}
-.community-row{
-  max-width:var(--max-w);
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:center;
-  padding:40px 0;
-}
-.community-row.reverse{ direction:rtl; }
-.community-row.reverse > *{ direction:ltr; }
-.community-photo{
-  aspect-ratio:4/3;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,.4);
-  background:linear-gradient(145deg,rgba(255,255,255,.25),rgba(0,0,0,.15));
-  overflow:hidden;
-}
-.community-photo img{
   width:100%;
-  height:100%;
-  object-fit:cover;
+  padding:26px 28px;
+}
+.overview-text p{
+  font-size:.95rem;
+  font-weight:600;
+  line-height:1.5;
+  margin-bottom:8px;
+  opacity:.95;
+}
+.overview-label{
   display:block;
+  font-size:clamp(1.6rem,3vw,2.2rem);
+  font-weight:800;
+  letter-spacing:.04em;
 }
-.community-photo-2{
-  background:linear-gradient(145deg,rgba(255,255,255,.3),rgba(0,0,0,.25));
-}
-.community-eyebrow{ font-size:.95rem; font-weight:700; opacity:.92; margin-bottom:10px; line-height:1.5; }
-.community-content h2{ font-size:clamp(1.6rem,3.6vw,2.3rem); font-weight:800; margin-bottom:14px; line-height:1.35; }
-.community-content p{ opacity:.92; margin-bottom:20px; font-size:.95rem; }
-.community-actions{ display:flex; gap:12px; flex-wrap:wrap; }
-.community-section .btn-outline{
-  background:transparent;
-  color:#fff;
-  border-color:rgba(255,255,255,.6);
-}
-.community-section .btn-outline:hover{ background:rgba(255,255,255,.18); }
-.community-section .btn-dark:hover{ background:#16332b; }
 
 /* =========================================================
    FOOTER
    ========================================================= */
 .site-footer{
-  background:#152033;
-  color:#cfd6df;
-  padding:40px 20px;
+  background:var(--navy);
+  color:#9aa6b8;
+  padding:48px 20px 30px;
 }
 .footer-inner{
   max-width:var(--max-w);
   margin:0 auto;
+}
+.footer-top{
   display:flex;
   flex-wrap:wrap;
   justify-content:space-between;
   align-items:center;
   gap:20px;
+  padding-bottom:28px;
+  border-bottom:1px solid rgba(255,255,255,.12);
 }
-.footer-brand{ display:flex; align-items:center; gap:12px; }
-.footer-brand strong{ color:#fff; font-size:1.05rem; }
-.footer-brand p{ font-size:.8rem; opacity:.7; margin-top:4px; }
-.footer-brand .logo-mark img{ width:34px; height:34px; }
-.footer-links{ display:flex; gap:18px; flex-wrap:wrap; font-size:.85rem; }
-.footer-links a:hover{ color:#fff; }
-.footer-family{ display:flex; gap:18px; flex-wrap:wrap; align-items:center; }
-.footer-family img{ height:22px; width:auto; object-fit:contain; opacity:.75; filter:grayscale(.2) brightness(1.4); transition:opacity .2s; }
-.footer-family a:hover img{ opacity:1; }
-.footer-copy{ width:100%; text-align:center; font-size:.78rem; opacity:.5; padding-top:18px; border-top:1px solid rgba(255,255,255,.08); }
+.footer-logo{ display:flex; align-items:center; gap:10px; }
+.footer-logo .logo-text{ color:#fff; }
+.footer-logo .logo-text small{ color:rgba(255,255,255,.6); }
+.footer-badge{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:10px;
+  padding:10px 16px;
+  font-size:.78rem;
+  line-height:1.6;
+  color:#cfd6df;
+}
+.badge-mark{
+  font-size:.85rem;
+  font-weight:800;
+  letter-spacing:.05em;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.4);
+  border-radius:6px;
+  padding:6px 8px;
+  flex-shrink:0;
+}
+.badge-text small{ opacity:.65; font-size:.66rem; }
+.footer-bottom{
+  padding-top:22px;
+  font-size:.82rem;
+}
+.footer-bottom p{ margin-bottom:6px; }
+.footer-note{ margin-top:10px; opacity:.85; }
+.footer-copy{ margin-top:16px; font-size:.78rem; opacity:.5; }
 
 /* =========================================================
    반응형 (태블릿)
    ========================================================= */
 @media (max-width: 1024px){
   .quick-menu{ grid-template-columns:repeat(3,1fr); }
-  .testimonial-row{ grid-template-columns:repeat(2,1fr); }
-  .word-inner{ grid-template-columns:1fr; }
-  .word-photo{ order:-1; aspect-ratio:16/9; }
-  .healing-bird{ width:42%; opacity:.6; }
 }
 
 /* =========================================================
@@ -974,50 +733,16 @@ ul{ list-style:none; }
   .quick-item{ font-size:.75rem; padding:14px 4px; }
   .quick-icon{ width:22px; height:22px; }
 
-  .rolling-banner{ padding:0 14px 28px; }
   .rolling-track{ height:auto; min-height:260px; }
-  .roll-slide{ padding:28px 22px; }
-  .roll-slide h3{ font-size:1.15rem; }
-  .roll-slide p{ font-size:.85rem; }
 
-  .word-section{ padding:44px 16px; }
-  .word-content h2{ font-size:1.7rem; }
+  .overview-section{ padding:0 16px 50px; }
+  .overview-grid{ grid-template-columns:1fr; gap:14px; padding-top:28px; }
+  .overview-card{ aspect-ratio:16/9; }
 
-  .healing-section{ padding:50px 16px 30px; }
-  .healing-bird{ display:none; }
-  .healing-head{ max-width:none; }
-  .testimonial-row{ grid-template-columns:1fr; margin-top:30px; gap:14px; }
-
-  .kids-section{ padding:10px 16px 40px; }
-  .kids-row, .kids-row.reverse{
-    grid-template-columns:1fr;
-    direction:ltr;
-    gap:20px;
-    padding:24px 0;
-  }
-  .kids-row.reverse{ display:flex; flex-direction:column-reverse; }
-  .leaf{ font-size:2.2rem; }
-
-  .mission-section{ padding:56px 16px 90px; }
-  .mission-section h2{ font-size:1.6rem; }
-  .mission-bartizan{ width:90px; opacity:.6; }
-
-  .community-section{ padding:50px 16px; }
-  .community-row, .community-row.reverse{
-    grid-template-columns:1fr;
-    direction:ltr;
-    gap:24px;
-    padding:24px 0;
-  }
-  .community-row.reverse{ display:flex; flex-direction:column-reverse; }
-
-  .footer-inner{ flex-direction:column; align-items:flex-start; text-align:left; }
-  .footer-links{ gap:12px 16px; }
+  .footer-top{ flex-direction:column; align-items:flex-start; gap:18px; }
 }
 
 @media (max-width: 480px){
   .quick-menu{ grid-template-columns:repeat(2,1fr); }
-  .word-actions, .mission-actions, .community-actions{ flex-direction:column; }
-  .btn{ width:100%; }
   .rolling-controls{ gap:10px; }
 }
