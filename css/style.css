@@ -367,8 +367,8 @@ ul{ list-style:none; }
    ========================================================= */
 .intro-banner{
   background:
-    linear-gradient(135deg, rgba(30,70,40,.55), rgba(30,90,50,.35)),
-    repeating-linear-gradient(115deg, #3f8a45 0 40px, #4a9a4f 40px 80px, #357a3c 80px 120px);
+    linear-gradient(135deg, rgba(20,55,30,.55), rgba(20,65,35,.35)),
+    url("../assets/intro/forest-bg.webp") center/cover no-repeat;
   text-align:center;
   padding:64px 20px;
   color:#fff;
