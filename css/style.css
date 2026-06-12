@@ -366,25 +366,12 @@ ul{ list-style:none; }
    인트로 그린 배너
    ========================================================= */
 .intro-banner{
-  background:
-    linear-gradient(135deg, rgba(20,55,30,.55), rgba(20,65,35,.35)),
-    url("../assets/intro/forest-bg.webp") center/cover no-repeat;
-  text-align:center;
-  padding:64px 20px;
-  color:#fff;
+  aspect-ratio:2000 / 472;
+  background:url("../assets/intro/forest-bg.webp") center/cover no-repeat;
 }
-.intro-eyebrow{
-  font-size:1rem;
-  font-weight:600;
-  opacity:.9;
-  margin-bottom:8px;
+.intro-banner .intro-inner{
+  display:none;
 }
-.intro-banner h2{
-  font-size:clamp(1.6rem,4vw,2.4rem);
-  font-weight:800;
-  margin-bottom:14px;
-}
-.intro-desc{ font-size:.95rem; opacity:.92; }
 
 /* =========================================================
    퀵메뉴
@@ -696,8 +683,6 @@ ul{ list-style:none; }
   .hero-banner .roll-prev{ left:10px; }
   .hero-banner .roll-next{ right:10px; }
   .hero-banner .rolling-controls{ bottom:10px; gap:10px; padding:5px 12px; }
-
-  .intro-banner{ padding:44px 16px; }
 
   .quick-menu{
     grid-template-columns:repeat(3,1fr);
