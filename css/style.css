@@ -75,7 +75,8 @@ ul{ list-style:none; }
   gap:10px;
   flex-shrink:0;
 }
-.logo-mark{ display:flex; }
+.logo-mark{ display:flex; align-items:center; }
+.logo-mark img{ width:38px; height:38px; object-fit:contain; }
 .logo-text{
   font-size:1.25rem;
   font-weight:800;
@@ -412,7 +413,7 @@ ul{ list-style:none; }
 }
 .quick-item:hover{ background:var(--green-1); transform:translateY(-3px); }
 .quick-icon{ width:26px; height:26px; }
-.quick-icon svg{ width:100%; height:100%; }
+.quick-icon svg, .quick-icon img{ width:100%; height:100%; object-fit:contain; }
 
 /* =========================================================
    NEW: 롤링 배너 (신규 추가 영역)
@@ -691,6 +692,14 @@ ul{ list-style:none; }
   justify-content:flex-end;
   overflow:visible;
 }
+.kids-photo img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:18px;
+}
 .leaf{
   position:absolute;
   font-size:3rem;
@@ -724,6 +733,23 @@ ul{ list-style:none; }
   height:90px;
   background:var(--green-2);
   clip-path:polygon(0 60%, 8% 40%, 18% 70%, 30% 35%, 42% 75%, 55% 30%, 68% 70%, 80% 40%, 92% 75%, 100% 45%, 100% 100%, 0 100%);
+}
+.mission-bartizan{
+  position:absolute;
+  right:4%;
+  top:6%;
+  width:min(160px,18%);
+  opacity:.85;
+  z-index:1;
+  pointer-events:none;
+}
+.mission-wave{
+  position:absolute;
+  left:0; right:0; bottom:60px;
+  width:100%;
+  z-index:1;
+  opacity:.5;
+  pointer-events:none;
 }
 .mission-inner{ max-width:var(--max-w); margin:0 auto; position:relative; z-index:2; }
 .mission-section h2{
@@ -767,6 +793,13 @@ ul{ list-style:none; }
   border-radius:16px;
   border:1px solid rgba(255,255,255,.4);
   background:linear-gradient(145deg,rgba(255,255,255,.25),rgba(0,0,0,.15));
+  overflow:hidden;
+}
+.community-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 .community-photo-2{
   background:linear-gradient(145deg,rgba(255,255,255,.3),rgba(0,0,0,.25));
@@ -803,8 +836,12 @@ ul{ list-style:none; }
 .footer-brand{ display:flex; align-items:center; gap:12px; }
 .footer-brand strong{ color:#fff; font-size:1.05rem; }
 .footer-brand p{ font-size:.8rem; opacity:.7; margin-top:4px; }
+.footer-brand .logo-mark img{ width:34px; height:34px; }
 .footer-links{ display:flex; gap:18px; flex-wrap:wrap; font-size:.85rem; }
 .footer-links a:hover{ color:#fff; }
+.footer-family{ display:flex; gap:18px; flex-wrap:wrap; align-items:center; }
+.footer-family img{ height:22px; width:auto; object-fit:contain; opacity:.75; filter:grayscale(.2) brightness(1.4); transition:opacity .2s; }
+.footer-family a:hover img{ opacity:1; }
 .footer-copy{ width:100%; text-align:center; font-size:.78rem; opacity:.5; padding-top:18px; border-top:1px solid rgba(255,255,255,.08); }
 
 /* =========================================================
@@ -872,6 +909,7 @@ ul{ list-style:none; }
 
   .mission-section{ padding:56px 16px 90px; }
   .mission-section h2{ font-size:1.6rem; }
+  .mission-bartizan{ width:90px; opacity:.6; }
 
   .community-section{ padding:50px 16px; }
   .community-row, .community-row.reverse{
