@@ -574,7 +574,7 @@ ul{ list-style:none; }
 }
 .overview-wave{
   aspect-ratio:2000 / 329;
-  background:#fff url("../assets/overview/wave-bg.webp") center/100% 100% no-repeat;
+  background:#fff url("../assets/overview/wave-bg.webp") center/134.2% 100% no-repeat;
 }
 .overview-grid{
   max-width:var(--max-w);
