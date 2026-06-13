@@ -72,25 +72,12 @@ ul{ list-style:none; }
 .logo{
   display:flex;
   align-items:center;
-  gap:10px;
   flex-shrink:0;
 }
-.logo-mark{ display:flex; align-items:center; }
-.logo-mark img{ width:38px; height:38px; object-fit:contain; }
-.logo-mark svg{ width:38px; height:38px; }
-.logo-text{
-  font-size:1.25rem;
-  font-weight:800;
-  color:var(--navy);
-  line-height:1.1;
-  display:flex;
-  flex-direction:column;
-}
-.logo-text small{
-  font-size:.6rem;
-  font-weight:500;
-  letter-spacing:.04em;
-  color:var(--text-mute);
+.logo-img{
+  height:40px;
+  width:auto;
+  display:block;
 }
 
 /* 새 메인 메뉴: 밑줄 애니메이션 + 드롭다운 */
@@ -618,32 +605,18 @@ ul{ list-style:none; }
   padding-bottom:28px;
   border-bottom:1px solid rgba(255,255,255,.12);
 }
-.footer-logo{ display:flex; align-items:center; gap:10px; }
-.footer-logo .logo-text{ color:#fff; }
-.footer-logo .logo-text small{ color:rgba(255,255,255,.6); }
-.footer-badge{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.18);
-  border-radius:10px;
-  padding:10px 16px;
-  font-size:.78rem;
-  line-height:1.6;
-  color:#cfd6df;
+.footer-logo{ display:flex; align-items:center; }
+.footer-logo-img{
+  height:52px;
+  width:auto;
+  display:block;
 }
-.badge-mark{
-  font-size:.85rem;
-  font-weight:800;
-  letter-spacing:.05em;
-  color:#fff;
-  border:1px solid rgba(255,255,255,.4);
-  border-radius:6px;
-  padding:6px 8px;
-  flex-shrink:0;
+.footer-badge{ display:flex; align-items:center; }
+.ucck-badge-img{
+  height:72px;
+  width:auto;
+  display:block;
 }
-.badge-text small{ opacity:.65; font-size:.66rem; }
 .footer-bottom{
   padding-top:22px;
   font-size:.82rem;
@@ -670,8 +643,7 @@ ul{ list-style:none; }
   .search-btn{ display:none; }
 
   .header-inner{ padding:0 14px; gap:8px; }
-  .logo-text{ font-size:1.05rem; }
-  .logo-text small{ display:none; }
+  .logo-img{ height:32px; }
 
   .hero-banner .roll-arrow{ width:34px; height:34px; font-size:1.1rem; }
   .hero-banner .roll-prev{ left:10px; }
