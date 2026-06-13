@@ -610,12 +610,7 @@ ul{ list-style:none; }
   width:auto;
   display:block;
 }
-.footer-badge{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:8px;
-}
+.footer-badge{ display:flex; align-items:center; }
 .ucck-badge-img{
   height:72px;
   width:auto;
@@ -626,11 +621,19 @@ ul{ list-style:none; }
   font-size:.82rem;
 }
 .footer-bottom p{ margin-bottom:6px; }
+.footer-bottom-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:20px;
+}
 .footer-note{
-  font-size:.78rem;
-  opacity:.8;
+  font-weight:700;
+  color:#fff;
   white-space:nowrap;
 }
+.footer-note-break{ display:none; }
 .footer-copy{ margin-top:16px; font-size:.78rem; opacity:.5; }
 
 /* =========================================================
@@ -675,7 +678,9 @@ ul{ list-style:none; }
   .overview-card img{ height:auto; object-fit:contain; }
 
   .footer-top{ flex-direction:column; align-items:flex-start; gap:18px; }
-  .footer-note{ white-space:normal; font-size:.74rem; }
+  .footer-bottom-row{ gap:14px; }
+  .footer-note{ white-space:normal; font-size:.78rem; }
+  .footer-note-break{ display:inline; }
 }
 
 @media (max-width: 480px){
